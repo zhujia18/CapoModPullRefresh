@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "flarum": "^1.0.0",
     "flarum-webpack-config": "^1.0.0",
     "react": "^18.2.0",

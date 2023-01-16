@@ -15,6 +15,8 @@ import Application from 'flarum/common/Application';
 
 import ReactDOMServer from 'react-dom/server';
 import PullToRefresh from 'pulltorefreshjs';
+import { faSyncAlt} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 app.initializers.add('capomod/pullrefresh', () => {
   extend(Application.prototype, 'mount', () => {
@@ -25,10 +27,10 @@ app.initializers.add('capomod/pullrefresh', () => {
           window.location.reload();
       },
       iconArrow: ReactDOMServer.renderToString(
-          // <FontAwesomeIcon icon={faSyncAlt} />
+          <FontAwesomeIcon icon={faSyncAlt} />
       ),
       iconRefreshing: ReactDOMServer.renderToString(
-          // <FontAwesomeIcon icon={faSyncAlt} spin={true} />
+          <FontAwesomeIcon icon={faSyncAlt} spin={true} />
       ),
   });
   });
