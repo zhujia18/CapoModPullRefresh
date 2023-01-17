@@ -24,8 +24,8 @@ app.initializers.add('capomod/pullrefresh', () => {
     instructionsRefreshing: '<span style="color: var(--control-color);font-size: 13px;">正在刷新</span>',
     iconArrow: '<i class="fa-solid fa-arrow-up" style="color: var(--control-color);font-size: 13px;"></i>',
     iconRefreshing: '<i class="fa-solid fa-spinner" style="color: var(--control-color);font-size: 13px;"></i>',
-    distThreshold: 85,
-    distMax: 100,
+    distThreshold: 95,
+    distMax: 115,
     distReload: 100,
     distIgnore: 0,
   });
