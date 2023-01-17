@@ -10,29 +10,23 @@
  */
 
 import app from 'flarum/forum/app';
-import { extend } from 'flarum/common/extend';
-import Application from 'flarum/common/Application';
-
-import React, { Component } from 'react';
-import ReactDOMServer from 'react-dom/server';
 import PullToRefresh from 'pulltorefreshjs';
-import { faSyncAlt} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 app.initializers.add('capomod/pullrefresh', () => {
-  extend(Application.prototype, 'mount', () => {
-    PullToRefresh.init({
-      mainElement: 'body',
-      onRefresh() {
-        alert('Jasper')
-          window.location.reload();
-      },
-      iconArrow: ReactDOMServer.renderToString(
-          // <FontAwesomeIcon icon={faSyncAlt} />
-      ),
-      iconRefreshing: ReactDOMServer.renderToString(
-          // <FontAwesomeIcon icon={faSyncAlt} spin={true} />
-      ),
-  });
+  PullToRefresh.init({
+    mainElement: 'body',
+    triggerElement: 'body',
+    onRefresh() {
+      window.location.reload();
+    },
+    instructionsPullToRefresh: '<span style="color: var(--control-color);font-size: 13px;">下拉将要刷新</span>',
+    instructionsReleaseToRefresh: '<span style="color: var(--control-color);font-size: 13px;">松开将会刷新</span>',
+    instructionsRefreshing: '<span style="color: var(--control-color);font-size: 13px;">正在刷新</span>',
+    iconArrow: '<i class="fa-solid fa-arrow-up" style="color: var(--control-color);font-size: 13px;"></i>',
+    iconRefreshing: '<i class="fa-solid fa-spinner" style="color: var(--control-color);font-size: 13px;"></i>',
+    distThreshold: 85,
+    distMax: 100,
+    distReload: 100,
+    distIgnore: 0,
   });
 });
