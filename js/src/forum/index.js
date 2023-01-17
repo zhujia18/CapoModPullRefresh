@@ -25,7 +25,7 @@ app.initializers.add('capomod/pullrefresh', () => {
     iconArrow: '<i class="fa-solid fa-arrow-up" style="color: var(--control-color);font-size: 13px;"></i>',
     iconRefreshing: '<i class="fa-solid fa-spinner" style="color: var(--control-color);font-size: 13px;"></i>',
     distThreshold: 95,
-    distMax: 115,
+    distMax: 120,
     distReload: 100,
     distIgnore: 0,
   });
